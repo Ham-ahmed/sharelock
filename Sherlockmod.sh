@@ -40,6 +40,14 @@ echo "#           your Device will RESTART Now                #"
 echo "#########################################################"
 sleep 3s
 
+# Receiver restart
+echo "> Restarting receiver in 3 seconds..."
+sleep 3s
+
+killall -9 enigma2 >/dev/null 2>&1
+sleep 2s
+enigma2 >/dev/null 2>&1 &
+
 else
 
 echo "> $plugin-$version package installation failed"
